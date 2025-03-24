@@ -1,0 +1,11 @@
+<svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved dashed path -->
+  <path d="M10,20 Q60,70 100,50 T180,70" stroke="white" stroke-width="2" stroke-dasharray="5 5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrowhead Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="white"/>
+    </marker>
+  </defs>
+</svg>
