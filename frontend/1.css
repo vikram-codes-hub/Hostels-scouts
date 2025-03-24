@@ -119,15 +119,16 @@ body {
     border: none;
     background-color: #626f7c;
 }
-/* Popup Container */
+/* Popup container */
 .popup {
     position: absolute;
-    top: 70px; /* Adjust as per navbar height */
+    top: 70px; /* Adjust based on your layout */
     right: 20px;
-    width: 220px;
-    background: white;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.2); /* Transparent White */
+    backdrop-filter: blur(10px); /* Blur effect */
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 15px;
     display: none; /* Initially hidden */
     flex-direction: column;
@@ -135,6 +136,7 @@ body {
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for depth */
 }
 
 /* Show when active */
@@ -144,30 +146,130 @@ body {
     transform: translateY(0);
 }
 
+
+/* Show popup when active */
+.popup.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Profile Section */
+.firstyyy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
 /* Profile Picture */
 .profile-pic {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* User Name */
 .user-name {
     font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 16px;
+    margin-bottom: 3px;
 }
 
 /* User Email */
 .user-email {
     font-size: 14px;
-    color: gray;
-    margin-bottom: 10px;
+    color: black
 }
 
-/* Menu Buttons */
-.menu-item {
+/* Menu Options */
+.option {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Work with Us Button */
+.work_with_us {
+    width: 100%;
+    position: relative;
+}
+
+.work_with_us button {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s ease;
+}
+
+/* Dropdown Icon */
+.work_with_us img {
+    height: 18px;
+    width: 18px;
+}
+
+/* Work Options Dropdown */
+.work-options {
+    display: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative; /* Keep it inside popup */
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show dropdown when clicked */
+.work-options.show {
+    display: block;
+    max-height: 100px;
+    opacity: 1;
     width: 90%;
+}
+
+
+/* Buttons inside dropdown */
+.work-options .menu-item {
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.work-options .menu-item:hover {
+    background: #f1f1f1;
+}
+
+/* Logout and Settings Buttons */
+.logout_option,
+.setting-options {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.logout_option button,
+.setting-options button {
+    width: 100%;
     padding: 10px;
     background: none;
     border: none;
@@ -177,15 +279,15 @@ body {
     transition: background 0.2s ease;
 }
 
-.menu-item:hover {
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-/* Logout Button */
-.logout-btn {
+.logout_option button {
     color: red;
     font-weight: bold;
+}
+
+.logout_option button:hover,
+.setting-options button:hover,.work_with_us button:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
 }
 
 .extra-options-button .login-button-img {
@@ -213,7 +315,7 @@ body {
     background-color: white;
     margin: auto;
     border-radius: 25px;
-    margin-top: 7px;
+    margin-top: 66px;
 }
 
 .global-deals-img {
@@ -223,34 +325,44 @@ body {
     border-radius: 24px;
     border: none;
 }
+.cancellation{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
 
 .red-svg {
-    top: 558px;
+    top: 662px;
     position: absolute;
 }
 
 .red-svg-text {
-    top: 562px;
+    top: 646px;
     position: absolute;
     margin-left: 26px;
     font-size: 23px;
     color: white;
     padding: 18px;
 }
+.red-svg-text h1{
+    margin-top: -8px;
+}
 
 .red-svg-text p {
-    left: -11px;
+    left: 61px;
     position: absolute;
-    top: 102px;
-    font-size: 22px;
+    top: 80px;
+    font-size: 17px;
 }
 
 .offer-hostels {
     height: 302px;
     width: 91%;
+    margin-top: 57px;
 
     position: absolute;
-    top: 713px;
+    top: 726px;
     display: flex;
     gap: 20px;
 
@@ -301,7 +413,7 @@ body {
     height: 80px;
     width: 190px;
     position: absolute;
-    top: 1031px;
+    top: 1103px;
     right: 244px;
 }
 .all-deals button{
@@ -313,6 +425,7 @@ body {
     cursor: pointer;
     position: absolute;
     right: -160px;
+    margin-bottom: -16px;
 }
 .discover-deals-link{
     font-size: 18px;
