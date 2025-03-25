@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Hostel Finder - Sign Up</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
 </head>
 <body>
     <div class="college-logo">
-        <img src="./assests/do" alt="College Logo">
+        <img src="./assets/logo.png" alt="College Logo">
     </div>
+
     <div class="container">
         <div class="form-container">
             <h2>Sign Up</h2>
+
             <form onsubmit="return validateSignup()">
                 <div class="form-group">
                     <label for="name">Full Name:</label>
@@ -30,16 +34,50 @@
                     <label for="confirm-password">Confirm Password:</label>
                     <input type="password" id="confirm-password" name="confirm-password" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="college">College Name:</label>
-                    <input type="text" id="college" name="college" required>
-                </div>
+
                 <button type="submit" class="submit-btn">Sign Up</button>
             </form>
+
+            <!-- Social Login Buttons -->
+        <!-- Social Login Buttons -->
+<div class="social-login">
+    <!-- Google Sign-In -->
+    <div id="g_id_onload"
+        data-client_id="57372292538-pu8op66e1fb5tg083tve9b00f7u2svg9.apps.googleusercontent.com"
+        data-context="signup"
+        data-ux_mode="popup"
+        data-callback="handleCredentialResponse"
+        data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <!-- Apple Sign-In -->
+    <button class="apple-signin-btn" onclick="handleAppleSignIn()">
+        <img src="apple-logo.svg" alt="Apple Logo" width="20">
+        Sign in with Apple
+    </button>
+</div>
+
+
             <p class="login-redirecr">Already have an account? <a class="reddyy" href="login.html">Login</a></p>
         </div>
     </div>
+
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("Google Token: " + response.credential);
+            // Send to backend for verification
+        }
+
+        function handleAppleSignIn() {
+            AppleID.auth.signIn().then(response => {
+                console.log("Apple Token:", response);
+                // Send the token to backend
+            }).catch(error => {
+                console.error("Apple Sign-In failed:", error);
+            });
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
