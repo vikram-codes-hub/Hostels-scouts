@@ -3,9 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hostel Chatbox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="1.css">
+   
 </head>
 <body>
-    Chatbox
+    <header>
+        <div class="navbar">
+            <h1><i class="fas fa-home"></i> HOSTEL SCOUTS</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="../1.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About us</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contact us</a></li>
+        </ul>
+    </header>
+
+    <!-- Chat Layout -->
+    <div class="chat-container">
+        <!-- Left Side (Users List) -->
+        <div class="user-list">
+            <h2><i class="fas fa-comments"></i> Chats</h2>
+            <div class="search-box" style="padding: 0.5rem 1rem;">
+                <input type="text" placeholder="Search users..." style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 20px;">
+            </div>
+            <ul id="user-list">
+                <li class="user active" onclick="openChat('John Doe')">
+                    <div>
+                        <strong>John Doe</strong>
+                        <div style="font-size: 0.8rem; color: #666;">Looking for a single room</div>
+                    </div>
+                    <span style="font-size: 0.8rem; margin-left: auto;">10:30 AM</span>
+                </li>
+                <li class="user" onclick="openChat('Jane Smith')">
+                    <div>
+                        <strong>Jane Smith</strong>
+                        <div style="font-size: 0.8rem; color: #666;">Question about pricing</div>
+                    </div>
+                    <span style="font-size: 0.8rem; margin-left: auto;">Yesterday</span>
+                </li>
+                <li class="user offline" onclick="openChat('David Johnson')">
+                    <div>
+                        <strong>David Johnson</strong>
+                        <div style="font-size: 0.8rem; color: #666;">Wants to visit tomorrow</div>
+                    </div>
+                    <span style="font-size: 0.8rem; margin-left: auto;">Monday</span>
+                </li>
+                <li class="user" onclick="openChat('Sarah Williams')">
+                    <div>
+                        <strong>Sarah Williams</strong>
+                        <div style="font-size: 0.8rem; color: #666;">Interested in facilities</div>
+                    </div>
+                    <span style="font-size: 0.8rem; margin-left: auto;">Last week</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Right Side (Chatbox) -->
+        <div class="chat-section">
+            <div class="chat-header" id="chat-header">
+                <i class="fas fa-user"></i> John Doe
+                <span style="font-size: 0.9rem; margin-left: auto; opacity: 0.8;">
+                    <i class="fas fa-circle" style="color: var(--success-color); font-size: 0.7rem;"></i> Online
+                </span>
+            </div>
+            <div class="chat-box" id="chat-box">
+                <div class="message received">
+                    Hello! I'm interested in the hostel room you posted. Is it still available?
+                    <span class="message-time">10:30 AM</span>
+                </div>
+                <div class="message sent">
+                    Yes, it's still available! Would you like to schedule a visit?
+                    <span class="message-time">10:32 AM</span>
+                </div>
+                <div class="message received">
+                    That would be great! How about tomorrow afternoon?
+                    <span class="message-time">10:33 AM</span>
+                </div>
+                <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i> Send</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Hostel Scouts</h2>
+                <p>Helping you find the best hostels effortlessly.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../1.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Hostels</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@hostelscouts.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hostel Scouts. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="1.js"></script>
 </body>
 </html>

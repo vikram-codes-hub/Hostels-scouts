@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Scouts - Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-links li {
+            margin-left: 1.5rem;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .navbar-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Settings Container */
+        .settings-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        .settings-sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .settings-sidebar h2 {
+            padding: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .settings-menu {
+            list-style: none;
+        }
+
+        .settings-menu li {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .settings-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .settings-menu a:hover {
+            background-color: #e9ecef;
+        }
+
+        .settings-menu a.active {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .settings-menu i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Settings Content */
+        .settings-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .settings-section {
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .settings-section.active {
+            display: block;
+        }
+
+        .settings-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Profile Section */
+        .profile-picture {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-picture img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            margin-right: 1.5rem;
+        }
+
+        .profile-picture .upload-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .profile-picture .upload-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.2);
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .save-btn {
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .save-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* Notification Settings */
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-item label {
+            font-weight: 500;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--success-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .settings-container {
+                flex-direction: column;
+            }
+
+            .settings-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .settings-menu {
+                display: flex;
+                overflow-x: auto;
+            }
+
+            .settings-menu li {
+                border-bottom: none;
+                border-right: 1px solid var(--border-color);
+                flex-shrink: 0;
+            }
+
+            .settings-menu a {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1><i class="fas fa-home"></i> HOSTEL SCOUTS</h1>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="../1.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About us</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contact us</a></li>
+        </ul>
+    </header>
+
+    <!-- Settings Container -->
+    <div class="settings-container">
+        <!-- Sidebar Navigation -->
+        <div class="settings-sidebar">
+            <h2><i class="fas fa-cog"></i> Settings</h2>
+            <ul class="settings-menu">
+                <li><a href="#" class="active" onclick="showSection('profile')"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#" onclick="showSection('account')"><i class="fas fa-lock"></i> Account</a></li>
+                <li><a href="#" onclick="showSection('notifications')"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#" onclick="showSection('privacy')"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+                <li><a href="#" onclick="showSection('preferences')"><i class="fas fa-sliders-h"></i> Preferences</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Settings Content -->
+        <div class="settings-content">
+            <!-- Profile Section -->
+            <div id="profile" class="settings-section active">
+                <h3><i class="fas fa-user"></i> Profile Information</h3>
+                
+                <div class="profile-picture">
+                    <img src="https://via.placeholder.com/100" alt="Profile Picture" id="profile-img">
+                    <button class="upload-btn" onclick="document.getElementById('profile-upload').click()">
+                        <i class="fas fa-camera"></i> Change Photo
+                    </button>
+                    <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" value="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" value="Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="john.doe@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" value="+1 234 567 890">
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" rows="3">I'm a student looking for affordable hostel accommodations near the university.</textarea>
+                </div>
+
+                <button class="save-btn"><i class="fas fa-save"></i> Save Changes</button>
+            </div>
+
+            <!-- Account Section -->
+            <div id="account" class="settings-section">
+                <h3><i class="fas fa-lock"></i> Account Security</h3>
+                
+                <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password">
+                </div>
+
+                <div class="form-group">
+                    <label>Two-Factor Authentication</label>
+                    <div class="notification-item">
+                        <label>Enable 2FA via SMS</label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="save-btn"><i class="fas fa-save"></i> Update Security</button>
+            </div>
+
+            <!-- Notifications Section -->
+            <div id="notifications" class="settings-section">
+                <h3><i class="fas fa-bell"></i> Notification Preferences</h3>
+                
+                <div class="form-group">
+                    <div class="notification-item">
+                        <label>New Messages</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-item">
+                        <label>Booking Confirmations</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-item">
+                        <label>Special Offers</label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="notification-item">
+                        <label>Hostel Updates</label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="save-btn"><i class="fas fa-save"></i> Save Preferences</button>
+            </div>
+
+            <!-- Privacy Section -->
+            <div id="privacy" class="settings-section">
+                <h3><i class="fas fa-shield-alt"></i> Privacy Settings</h3>
+                
+                <div class="form-group">
+                    <label>Profile Visibility</label>
+                    <select>
+                        <option>Public</option>
+                        <option selected>Only to Hostel Scouts</option>
+                        <option>Private</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Who can message you?</label>
+                    <select>
+                        <option selected>Anyone</option>
+                        <option>Only verified users</option>
+                        <option>Only people I follow</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Show my last seen</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button class="save-btn"><i class="fas fa-save"></i> Update Privacy</button>
+            </div>
+
+            <!-- Preferences Section -->
+            <div id="preferences" class="settings-section">
+                <h3><i class="fas fa-sliders-h"></i> Application Preferences</h3>
+                
+                <div class="form-group">
+                    <label>Theme</label>
+                    <select>
+                        <option selected>Light</option>
+                        <option>Dark</option>
+                        <option>System Default</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Language</label>
+                    <select>
+                        <option selected>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>German</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Default Currency</label>
+                    <select>
+                        <option selected>USD ($)</option>
+                        <option>EUR (€)</option>
+                        <option>GBP (£)</option>
+                    </select>
+                </div>
+
+                <button class="save-btn"><i class="fas fa-save"></i> Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show selected settings section
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.settings-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update active menu item
+            document.querySelectorAll('.settings-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        // Profile picture upload preview
+        document.getElementById('profile-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('profile-img').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Save button functionality (simulated)
+        document.querySelectorAll('.save-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Settings saved successfully!');
+            });
+        });
+    </script>
+</body>
+</html>
