@@ -20,7 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 21px 50px;
+    padding: 20px 50px;
     position: fixed; 
     width: 100%;
     top: 0;
@@ -103,4 +103,172 @@ header {
     top: 20%;
     left: 10%;
  
+}
+/* ====== GLOBAL TRAVEL DEALS SECTION ====== */
+.deals-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #cc0074;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #444;
+    margin: 10px 0 30px;
+}
+
+.section-subtitle a {
+    color: #cc0074;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.deals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ====== CARD STYLES ====== */
+.deal-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.deal-card:hover {
+    transform: translateY(-5px);
+}
+
+.deal-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.rating {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff9800;
+}
+
+.rating span {
+    font-weight: 700;
+}
+
+.location {
+    font-size: 14px;
+    color: #777;
+}
+
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #cc0074;
+    color: white;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+}
+
+/* === Terms & Conditions Wrapper === */
+.terms-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* === Terms Header (Clickable) === */
+.terms-header {
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+/* === Terms Content (Initially Hidden) === */
+.terms-content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left; 
+    background: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.terms-content ol {
+    padding-left: 20px;
+}
+
+.terms-content li {
+    margin-bottom: 10px;
+}
+
+/* === Add Arrow Icon Effect === */
+summary {
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    padding-right: 30px; /* Space for arrow */
+}
+
+summary::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow when open */
+details[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
 }
