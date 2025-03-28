@@ -371,7 +371,7 @@ body {
     width: 279px;
     background-color: white;
     border-radius: 40px;
-    overflow: hidden; /* Ensures the image does not overflow */
+    overflow: hidden; /* Prevents overflow */
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -380,9 +380,11 @@ body {
 .img-1 img, .img-2 img, .img-3 img, .img-4 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images cover the div while maintaining aspect ratio */
-    border-radius: 40px; /* Applies same border-radius to the image */
+    object-fit: cover; /* Ensures full coverage */
+    border-radius: 40px; /* Matches container */
+    display: block; /* Removes extra spacing under images */
 }
+
 
 .offer-hostels .img-1 {
     margin-left: 22px;
@@ -517,6 +519,17 @@ body {
     display: flex;
     justify-content: center;
 }
+.chatbox-img2 {
+    height: 24px; /* Reduce height from 280px to 240px */
+    max-width: 50%; /* Reduce the maximum width slightly */
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -120px; /* Adjust if necessary */
+}
+
+
 .mid-content{
     
     border: 2px;
