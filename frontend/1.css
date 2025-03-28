@@ -20,6 +20,29 @@ body {
     margin-top: 10px;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: -28px;
+}
+
+.logo-container img {
+    height: 103px; /* Adjust size */
+    width: auto;
+    object-fit: contain;
+    margin-left: -57px;
+    font-size: 30px;
+}
+
+.logo-container h1 {
+    font-size: 24px; /* Adjust text size */
+    font-weight: 700;
+    color: #333; /* Adjust color */
+    margin: 0;
+    letter-spacing: 1px;
+}
+
 .navbar {
     height: 80px;
     width: 90%;
@@ -29,9 +52,10 @@ body {
 }
 
 .navbar h1 {
-    margin-left: 32px;
+    margin-left: -9px;
     position: relative;
-    top: 10px;
+    top: -8px;
+    font-size: 39px;
 }
 
 .hero-container-text {
@@ -61,7 +85,7 @@ body {
 .search-container {
     display: flex;
     justify-content: center;
-    margin-top: -28px;
+    margin-top: -82px;
     ;
 }
 
@@ -366,28 +390,18 @@ body {
     gap: 20px;
 
 }
-.img-1, .img-2, .img-3, .img-4 {
+.img-1,.img-2,.img-3,.img-4{
     height: 299px;
     width: 279px;
     background-color: white;
+    border: 2px solid red;
     border-radius: 40px;
-    overflow: hidden; /* Ensures the image does not overflow */
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-
-.img-1 img, .img-2 img, .img-3 img, .img-4 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures images cover the div while maintaining aspect ratio */
-    border-radius: 40px; /* Applies same border-radius to the image */
+    border: none
 }
 
 .offer-hostels .img-1 {
     margin-left: 22px;
 }
-
 .rightgo{
     top: 653px;
     position: absolute;

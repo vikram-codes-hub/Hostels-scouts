@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 80px; /* Prevents navbar overlap */
+    overflow-x: hidden; /* Prevents unnecessary scrolling */
+}
+
+/* Navbar */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Title */
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    transition: all 0.3s ease-in-out; 
+    border-radius: 5px;
+}
+
+/* Hover & Active State */
+.navbar-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffcc00;
+}
+
+.navbar-links .active {
+    background: #ffcc00;
+    color: black;
+    border-radius: 5px;
+}
+
+/* About Us Section */
+section {
+    max-width: 700px;
+    margin: 80px auto 50px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Credits Section */
+h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+.credits-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.credits-list li {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    padding: 5px 0;
+}
+
+/* Footer */
+.footer {
+    background: #1e1e1e;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px; /* Prevents footer from overlapping */
+    width: 100%;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover {
+    color: #ff9a9e;
+}
+
+.footer-social .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding: 10px;
+    background: #161616;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    section {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
