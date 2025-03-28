@@ -366,18 +366,28 @@ body {
     gap: 20px;
 
 }
-.img-1,.img-2,.img-3,.img-4{
+.img-1, .img-2, .img-3, .img-4 {
     height: 299px;
     width: 279px;
     background-color: white;
-    border: 2px solid red;
     border-radius: 40px;
-    border: none
+    overflow: hidden; /* Ensures the image does not overflow */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.img-1 img, .img-2 img, .img-3 img, .img-4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the div while maintaining aspect ratio */
+    border-radius: 40px; /* Applies same border-radius to the image */
 }
 
 .offer-hostels .img-1 {
     margin-left: 22px;
 }
+
 .rightgo{
     top: 653px;
     position: absolute;
