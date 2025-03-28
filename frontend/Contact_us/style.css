@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Global Reset and Base Styles */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding-top: 80px; /* Prevents navbar overlap */
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffcc00;
+}
+
+.navbar-links .active {
+    background: #ffcc00;
+    color: black;
+}
+
+/* Main Content Section */
+section {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto 50px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input, 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+input:focus, 
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer {
+    background: #1e1e1e;
+    color: white;
+    padding: 40px 5%;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff9a9e;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding: 15px;
+    background: #161616;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    section {
+        width: 95%;
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    .navbar-links a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    input, 
+    textarea, 
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
