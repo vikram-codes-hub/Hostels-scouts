@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
+            --primary-color: rgb(0 0 0 / 80%);
+            --secondary-color: rgb(0 0 0 / 60%);
             --accent-color: #4fc3f7;
             --light-color: #f8f9fa;
             --dark-color: #343a40;
@@ -32,7 +32,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--primary-color);
             color: white;
             padding: 1rem 2rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -320,6 +320,67 @@
                 white-space: nowrap;
             }
         }
+        .footer {
+    background: #1e1e1e;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover {
+    color: #ff9a9e;
+}
+
+.footer-social .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding: 10px;
+    background: #161616;
+}
+
+
     </style>
 </head>
 <body>
@@ -531,6 +592,43 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Hostel Scouts</h2>
+                <p>Helping you find the best hostels effortlessly.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../1.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Hostels</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@hostelscouts.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hostel Scouts. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script>
         // Show selected settings section
