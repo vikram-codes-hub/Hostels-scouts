@@ -396,7 +396,6 @@ body {
     background-color: white;
     border: 2px solid red;
     border-radius: 40px;
-<<<<<<< HEAD
     overflow: hidden; /* Prevents overflow */
     display: flex; 
     align-items: center; 
@@ -409,9 +408,6 @@ body {
     object-fit: cover; /* Ensures full coverage */
     border-radius: 40px; /* Matches container */
     display: block; /* Removes extra spacing under images */
-=======
-    border: none
->>>>>>> 11a6b7141226434f0bda005315501b7e0ff2b03b
 }
 
 
