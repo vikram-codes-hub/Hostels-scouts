@@ -548,13 +548,18 @@ body {
     justify-content: center;
 }
 .chatbox-img2 {
-    height: 24px; /* Reduce height from 280px to 240px */
-    max-width: 50%; /* Reduce the maximum width slightly */
+    height: 24px;
+    max-width: 50%;
     margin: 25px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -120px; /* Adjust if necessary */
+    margin-top: -227px;
+    transform: scaleY(-1);
+    
+}
+.events_img{
+    height: 266px;
 }
 
 
