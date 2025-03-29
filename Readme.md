@@ -93,6 +93,6 @@ For any queries, reach out to Vikramsingh9475889367@gmail.com
 
 Made with ❤️ for students by Vikram Singh Gangwar
 
-Gaurav chauhan
+Gaurav Singh Chauhan
 
 Garvit jain
