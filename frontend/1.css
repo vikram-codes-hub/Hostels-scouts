@@ -501,7 +501,7 @@ body {
 .carpool-card{
     height: 400px;
     width: 400px;
-    background-color: orange;
+    background-color: #b7e7fd;
     border: 2px solid red;
     border-radius: 40px;
     border: none;
